@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
   <title>Frontend Mentor | Tip calculator app</title>
 
 </head>
@@ -40,7 +37,7 @@
               <!-- input bill total -->
               <div class="input-bar">
 
-                <input type="number" placeholder="0" value="0" class="dollar-icon bill-amount input-number"  oninput="tipCalculator.inputBillAmount(this.value)">
+                <input type="number" min="0" placeholder="0" value="0" class="dollar-icon bill-amount input-number"  oninput="tipCalculator.inputBillAmount(this.value)">
 
               </div>
             </div>
@@ -60,7 +57,8 @@
                 <input type="button" value="15%" class="percent common-percentage">
                 <input type="button" value="25%" class="percent">
                 <input type="button" value="50%" class="percent">
-                <input type="button" value="Custom" class="percent custom-percentage">
+                <input type="button" value="Custom" class="percent custom-percentage show">
+                <input type="number"  min="0" placeholder="0%" oninput="tipCalculator.inputPercentage(this.value)" class="percent custom-perc-numb hide">
               </div>
 
               <input type="number" class="customPercField" placeholder="enter % desired" value="0" style="display: none;">
@@ -78,7 +76,7 @@
               <!-- input number of people -->
               <div class="input-bar">
 
-                <input type="number" placeholder="0" class="person-icon number-of-people input-number" oninput="tipCalculator.inputPeople(this.value)"> 
+                <input type="number"  min="0" placeholder="0" class="person-icon number-of-people input-number" oninput="tipCalculator.inputPeople(this.value)"> 
 
               </div>
 
@@ -143,5 +141,6 @@
   
   <footer></footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

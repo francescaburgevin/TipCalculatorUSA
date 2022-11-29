@@ -2,7 +2,7 @@ class Calculator {
 
     // clear all fields, disable reset button
     clear (){
-        tipAmount = "$32320.00";
+        //tipAmount = "0.00";
         this.tipPerPerson = "$0.00";
         this.billAmount = "0";
         this.numOfPeople = "0";
@@ -20,7 +20,17 @@ class Calculator {
     // recuperate number of people input
     inputPeople(num){
         if (num === "") return;
+        if (num === "0") {
+            document.querySelector(".number-of-people").classList.toggle("error"); 
+            return;
+        }
         numOfPeople = num;
+        this.compute();
+    }
+
+    inputPercentage(perc){
+        if(perc === '') return;
+        this.tipPercentage = perc;
         this.compute();
     }
 
@@ -98,5 +108,10 @@ tipPercentage.forEach(element => {
 // when reset button clicked, return to default values and disable reset
 document.querySelector('.resetME').addEventListener("click", () => {
     tipCalculator.clear();
+});
+
+document.querySelector('.custom-percentage').addEventListener("click", () => {
+    document.querySelector('.custom-percentage').classList.replace("show", "hide");
+    document.querySelector('.custom-perc-numb').classList.replace("hide", "show");
 });
     
