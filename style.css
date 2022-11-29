@@ -1,17 +1,6 @@
 /* font family */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
-@font-face {
-    font-family: andale;
-    src: url("andale-mono-font/ANDALEMO.woff");
-}
-/*
-- Strong cyan: hsl(172, 67%, 45%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Grayish cyan: hsl(184, 14%, 56%)
-- Very light grayish cyan: hsl(189, 41%, 97%)
-*/
-
 /* page background */
 body {
     background-color: hsl(185, 41%, 84%);
@@ -41,6 +30,40 @@ main h1 {
     margin-right: auto;
     margin-top: 4em;
     margin-bottom: 3em;
+}
+
+input[type="number"]
+{
+    font-family: 'Space Mono', monospace;
+    -moz-appearance: textfield;
+}
+
+input[type="text"]
+{
+    font-family: 'Space Mono', monospace;
+    font-size: xx-large;
+}
+
+input[type="button"]
+{
+    font-family: 'Space Mono', monospace;
+}
+
+input[type="placeholder"]
+{
+    font-family: 'Space Mono', monospace;
+}
+
+.error
+{
+ border:1px solid red;
+}
+
+.hide{
+    display:none;
+}
+.show{
+    display:block;
 }
 
 /* white background of calculator */
@@ -80,7 +103,6 @@ main h1 {
     padding: 0.5em;
     text-align : right;
     width: -webkit-fill-available;
-    font-family: andale;
     color: hsl(186, 14%, 43%);
 }
 
@@ -109,10 +131,9 @@ main h1 {
 
 /* tip percentage section */
 .percentage-tabs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-rows: 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 0.5em;
     column-gap: 0.5em;
 }
@@ -120,7 +141,7 @@ main h1 {
 /* individual percentage tabs */
 .percent {
     padding: 1em;
-    width: 85px;
+    width: 110px;
     font-size: 1em;
     color:  hsl(0, 0%, 100%);
     background-color: hsl(183, 100%, 15%);
@@ -138,6 +159,11 @@ main h1 {
 .custom-percentage {
     background-color: hsl(189, 41%, 97%);
     color: hsl(186, 14%, 43%);
+}
+
+.custom-perc-numb{
+    width:78px;
+    text-align: center;
 }
 
 /* right side of calculator */
@@ -180,8 +206,8 @@ main h1 {
     background-color: transparent;
     color: hsl(172, 67%, 45%);
     border: none;
-    font-size: 1.5em;
     text-align: end;
+    width: 100%;
 }
 
 /* reset button information */
@@ -189,22 +215,8 @@ main h1 {
     padding-top: 5em;
 }
 
-/* reset button off */
-.reset-button button:disabled  {
-    background-color: hsl(186, 14%, 43%);
-    color: hsl(183, 100%, 15%);
-    font-size: 1em;
-    text-align: center;
-    border: none;
-    border-radius: 3px;
-    padding: 1em;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* reset button on */
-.reset-button button:enabled {
-    background-color: hsl(172, 67%, 45%);
+button{
+    font-family: 'Space Mono', monospace;
     color: hsl(183, 100%, 15%);
     font-size: 1em;
     text-align: center;
@@ -213,4 +225,14 @@ main h1 {
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* reset button off */
+.reset-button button:disabled  {
+    background-color: hsl(186, 14%, 43%);
+}
+
+/* reset button on */
+.reset-button button:enabled {
+    background-color: hsl(172, 67%, 45%);
 }
